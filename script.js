@@ -45,7 +45,7 @@ function game () {
     for (let i = 1; i <= round; i++) {
         let computerSelection = getComputerChoice();
 
-        let playerSelect = (prompt('Enter you game choice: Eg: rock, paper, scissors')).toLowerCase();
+        let playerSelect = (prompt("Round " + i + "\nEnter you game choice: Eg: rock, paper, scissors")).toLowerCase();
 
         singleRound(playerSelect, computerSelection);
 
@@ -55,31 +55,31 @@ function game () {
         
         if (result === "It's a Draw! Play Again") {
             score = score;
-            alert (score);
         }
 
         else if (result === "You Win! Rock beats Scissors" || result === "You Win! Paper beats Rock" || result === "You Win! Scissors beats Paper") {
             score ++;
-            alert (score);
         }
 
         else {
             score --;
-            alert (score);
         }
     }
     
-    if (score = 0) {
-        return report = "It's a Draw!";
+    if (score === 0) {
+        report = "It's a Draw!";
     }
 
     else if (score > 0) {
-       return report = "You Won!";
+        report = "You Won!";
     }
 
-    else if (score < 0) {
-        return report = "You Lost!";
+    else {
+        report = "You Lost!";
     }
+
+    return report;
 }
 
-game();
+const gamereport = game();
+alert("Final Results: \n" + gamereport);
