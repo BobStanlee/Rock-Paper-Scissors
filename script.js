@@ -1,12 +1,14 @@
 let playerSelectionChoices = document.querySelectorAll('.playerchoice');
 
+let displayResults = document.querySelector('.display-results')
+
 let playerChoice = '';
 
 playerSelectionChoices.forEach(choice => {
   choice.addEventListener('click', () => {
     playerChoice = choice.id;
 
-
+    let 
   })
 });
 
