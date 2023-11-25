@@ -1,43 +1,53 @@
-function getComputerChoice () {
-    let randomValue;
-    randomValue = Math.floor(Math.random() * 3) + 1; // Generates a random integer between 1 and 3
+let playerSelectionChoices = document.querySelectorAll('.playerchoice');
 
-    if (randomValue == 1) {
-        return 'rock';
-    }
+let playerChoice = '';
 
-    else if (randomValue == 2) {
-        return 'paper';
-    }
+playerSelectionChoices.forEach(choice => {
+  choice.addEventListener('click', () => {
+    playerChoice = choice.id;
 
-    else if (randomValue == 3) {
-        return 'scissors';
-    }
+
+  })
+});
+
+
+
+function getComputerChoice() {
+  let randomValue;
+  randomValue = Math.floor(Math.random() * 3) + 1; // Generates a random integer between 1 and 3
+
+  if (randomValue == 1) {
+    return "rock";
+  } else if (randomValue == 2) {
+    return "paper";
+  } else if (randomValue == 3) {
+    return "scissors";
+  }
 }
 
 function singleRound(playerSelect, computerSelection) {
-    let result = "";
+  let result = "";
 
-    if (playerSelect === computerSelection) {
-        result = "It's a Draw! Play Again";
-    } else if (playerSelect === 'rock' && computerSelection === 'scissors'){
-        result = "You Win! Rock beats Scissors";
-    } else if (playerSelect === 'rock' && computerSelection === 'paper'){
-        result = "You Lose! Paper beats Rock";
-    } else if (playerSelect === 'paper' && computerSelection === 'rock'){
-        result = "You Win! Paper beats Rock";
-    } else if (playerSelect === 'paper' && computerSelection === 'scissors'){
-        result = "You Lose! Scissors beats Paper";
-    } else if (playerSelect === 'scissors' && computerSelection === 'rock'){
-        result = "You Lose! Rock beats Scissors";
-    } else if (playerSelect === 'scissors' && computerSelection === 'paper'){
-        result = "You Win! Scissors beats Paper";
-    }
+  if (playerSelect === computerSelection) {
+    result = "It's a Draw! Play Again";
+  } else if (playerSelect === "rock" && computerSelection === "scissors") {
+    result = "You Win! Rock beats Scissors";
+  } else if (playerSelect === "rock" && computerSelection === "paper") {
+    result = "You Lose! Paper beats Rock";
+  } else if (playerSelect === "paper" && computerSelection === "rock") {
+    result = "You Win! Paper beats Rock";
+  } else if (playerSelect === "paper" && computerSelection === "scissors") {
+    result = "You Lose! Scissors beats Paper";
+  } else if (playerSelect === "scissors" && computerSelection === "rock") {
+    result = "You Lose! Rock beats Scissors";
+  } else if (playerSelect === "scissors" && computerSelection === "paper") {
+    result = "You Win! Scissors beats Paper";
+  }
 
-    return result;
+  return result;
 }
 
-function game () {
+/**function game () {
     let score = 0;
     let report = "";
     let round = 5
@@ -79,7 +89,4 @@ function game () {
     }
 
     return report;
-}
-
-const gamereport = game();
-alert("Final Results: \n" + gamereport);
+} **/
