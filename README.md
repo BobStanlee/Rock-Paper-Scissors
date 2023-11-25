@@ -24,3 +24,7 @@ This project aims to encapsulate the logic and functionality of a rock-paper-sci
 ```
 
 Feel free to add more details, such as installation instructions or usage guidelines, based on the specifics of your program!
+
+
+### Appreciation
+- <a href="https://iconscout.com/icons/github" class="text-underline font-size-sm" target="_blank">Github</a> by <a href="https://iconscout.com/contributors/pixel-icons" class="text-underline font-size-sm" target="_blank">Pixel Icons</a>
