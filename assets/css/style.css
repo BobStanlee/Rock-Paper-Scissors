@@ -26,3 +26,27 @@ nav header {
     font-weight: 600;
     color: #000000;
 }
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.rounds {
+    font-size: 26px;
+    font-weight: 400;
+    color: #000000;
+    border-bottom: 2px solid #000000;
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+}
+
+.playerselection {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    row-gap: 20px;
+}
