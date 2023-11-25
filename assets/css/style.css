@@ -39,7 +39,7 @@ main {
     font-size: 26px;
     font-weight: 400;
     color: #000000;
-    border-bottom: 2px solid #000000;
+    border-bottom: 2px solid #EE340E;
     padding-bottom: 5px;
     margin-bottom: 20px;
 }
@@ -61,7 +61,7 @@ main {
 }
 
 .playerchoice img {
-    width: 250px;
+    width: 150px;
     height: auto;
 }
 
@@ -72,7 +72,12 @@ main {
 .choice-name {
     font-size: 18px;
     font-weight: 400;
-    border-top: 2px solid #000000;
+    border-top: 2px solid #EE340E;
+}
+
+.result-indicator {
+    border-bottom: 2px solid #EE340E;
+    font-size: 18px;
 }
 
 .display-results {

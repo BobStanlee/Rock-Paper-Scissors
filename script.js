@@ -1,18 +1,6 @@
-let playerSelectionChoices = document.querySelectorAll('.playerchoice');
+let playerSelectionChoices = document.querySelectorAll(".playerchoice");
 
-let displayResults = document.querySelector('.display-results')
-
-let playerChoice = '';
-
-playerSelectionChoices.forEach(choice => {
-  choice.addEventListener('click', () => {
-    playerChoice = choice.id;
-
-    let 
-  })
-});
-
-
+let displayResults = document.querySelector(".display-results");
 
 function getComputerChoice() {
   let randomValue;
@@ -49,46 +37,49 @@ function singleRound(playerSelect, computerSelection) {
   return result;
 }
 
-/**function game () {
-    let score = 0;
-    let report = "";
-    let round = 5
+function game() {
+  let score = 0;
+  let report = "";
+  let round = 5;
 
-    for (let i = 1; i <= round; i++) {
-        let computerSelection = getComputerChoice();
+  for (let i = 1; i <= round; i++) {
+    let computerSelection = getComputerChoice();
 
-        let playerSelect = (prompt("Round " + i + "\nEnter you game choice: Eg: rock, paper, scissors")).toLowerCase();
+    let playerChoice = "";
 
-        singleRound(playerSelect, computerSelection);
-
-        let result = singleRound(playerSelect, computerSelection);
-
-        alert(result);
+    playerSelectionChoices.forEach((choice) => {
+      choice.addEventListener("click", () => {
+        playerChoice = choice.id;
         
-        if (result === "It's a Draw! Play Again") {
-            score = score;
-        }
-
-        else if (result === "You Win! Rock beats Scissors" || result === "You Win! Paper beats Rock" || result === "You Win! Scissors beats Paper") {
-            score ++;
-        }
-
-        else {
-            score --;
-        }
-    }
+        singleRound(playerChoice, computerSelection);
     
-    if (score === 0) {
-        report = "It's a Draw!";
-    }
+        let result = singleRound(playerSelect, computerSelection);
+    
+        displayResults.textContent = result;
+    
+        if (result === "It's a Draw! Play Again") {
+          score = score;
+        } else if (
+          result === "You Win! Rock beats Scissors" ||
+          result === "You Win! Paper beats Rock" ||
+          result === "You Win! Scissors beats Paper"
+        ) {
+          score++;
+        } else {
+          score--;
+        }
+      });
+    });
 
-    else if (score > 0) {
-        report = "You Won!";
-    }
+  }
 
-    else {
-        report = "You Lost!";
-    }
+  if (score === 0) {
+    report = "It's a Draw!";
+  } else if (score > 0) {
+    report = "You Won!";
+  } else {
+    report = "You Lost!";
+  }
 
-    return report;
-} **/
+  return report;
+}
