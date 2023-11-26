@@ -53,16 +53,18 @@ function playGame() {
       let updatedScores = updateScores(results, playerScore, computerScore);
 
       //Updates the player-score element
-      let playerScoreContent = document.getElementById("player-score").textContent,
-      computerScoreContent = document.getElementById("computer-score").textContent;
+      let playerScoreElement = document.getElementById("player-score"),
+      computerScoreElement = document.getElementById("computer-score");
 
-      console.log({playerScoreContent, computerScoreContent});
-     
+      if(updatedScores.playerScore == 1) {
+        updatedPlayerScore += 1;
+        playerScoreElement.textContent = `Player: ${updatedPlayerScore}`;
+      } 
 
-      // if (updatedScores.playerScore === 1) {
-      //   updatedPlayerScore++;
-      //   playerScoreContent = `Player: ${updatedPlayerScore}`
-      // }
+      else if (updatedScores.computerScore == 1) {
+        updatedComputerScore += 1;
+        computerScoreElement.textContent = `Player: ${updatedComputerScore}`;
+      } 
     })
   );
 }
