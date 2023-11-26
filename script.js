@@ -53,9 +53,9 @@ function game() {
         
         singleRound(playerChoice, computerSelection);
     
-        let result = singleRound(playerSelect, computerSelection);
+        let results = singleRound(playerChoice, computerSelection());
     
-        displayResults.textContent = result;
+        displayResults.textContent = results;
     
         if (result === "It's a Draw! Play Again") {
           score = score;
@@ -83,3 +83,5 @@ function game() {
 
   return report;
 }
+
+
