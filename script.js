@@ -37,11 +37,28 @@ function playGame() {
       computerChoiceImg.src = "./assets/img/scissors.png";
     }
 
+    //call display results to screen function
     displayResultsOnScreen(playerChoice, computerChoice);
+
+    // 
   }))
 }
 
+// Function to play game for 5 rounds 
+function playFiveRounds () {
+  
+}
+
+// function to update the number of Rounds to the user
+function updateRounds(loopnumber) {
+  let displayRound = document.querySelector(".rounds")
+  
+  displayRound.textContent = `Round: ${loopnumber} / 5`;
+}
+
 playGame();
+
+// Function to display result from single round game
 
 function displayResultsOnScreen(playerChoice, computerChoice) {
   let results = singleRound(playerChoice, computerChoice);
