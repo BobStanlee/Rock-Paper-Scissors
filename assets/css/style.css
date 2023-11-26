@@ -73,6 +73,23 @@ main {
     row-gap: 30px;
 }
 
+.player-scores img, .computer-scores img {
+    width: 80px;
+    height: auto;
+}
+
+.info {
+    display: flex;
+    align-items: center;
+    justify-content:center ;
+}
+
+.info img {
+    width: 18px;
+    height: 18px;
+    margin-right: 10px;
+}
+
 .playerselection {
     display: flex;
     align-items: center;
