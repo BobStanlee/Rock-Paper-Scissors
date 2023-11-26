@@ -10,8 +10,6 @@ let playerChoiceImg = document.querySelector(".player-choice_img");
 // Selects the element with the class "computer-choice_img"
 let computerChoiceImg = document.querySelector(".computer-choice_img");
 
-// Function to generate a random choice for the computer: rock, paper, or scissors
-
 function playGame() {
   let playerChoice = "";
   let computerChoice = "";
@@ -27,7 +25,7 @@ function playGame() {
     } else if (playerChoice === "paper") {
       playerChoiceImg.src = "./assets/img/paper.png";
     } else {
-      playerChoiceImg.src = "./assets/img/rock.png";
+      playerChoiceImg.src = "./assets/img/scissors.png";
     }
 
     //Logic for displaying Computer choice
@@ -36,14 +34,21 @@ function playGame() {
     } else if (computerChoice === "paper") {
       computerChoiceImg.src = "./assets/img/paper.png";
     } else {
-      computerChoiceImg.src = "./assets/img/rock.png";
+      computerChoiceImg.src = "./assets/img/scissors.png";
     }
 
-
+    displayResultsOnScreen(playerChoice, computerChoice);
   }))
 }
 
 playGame();
+
+function displayResultsOnScreen(playerChoice, computerChoice) {
+  let results = singleRound(playerChoice, computerChoice);
+  displayResults.textContent = results;
+}
+
+// Function to generate a random choice for the computer: rock, paper, or scissors
 
 function getComputerChoice() {
   let randomValue;
