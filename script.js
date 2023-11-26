@@ -1,10 +1,54 @@
+// Selects all elements with the class "playerchoice" and stores them in a NodeList
 let playerSelectionChoices = document.querySelectorAll(".playerchoice");
 
+// Selects the element with the class "display-results"
 let displayResults = document.querySelector(".display-results");
+
+// Selects the element with the class "player-choice_img"
+let playerChoiceImg = document.querySelector(".player-choice_img");
+
+// Selects the element with the class "computer-choice_img"
+let computerChoiceImg = document.querySelector(".computer-choice_img");
+
+// Function to generate a random choice for the computer: rock, paper, or scissors
+
+function playGame() {
+  let playerChoice = "";
+  let computerChoice = "";
+
+  playerSelectionChoices.forEach(choice => choice.addEventListener('click', () => {
+    playerChoice = choice.id;
+
+    computerChoice = getComputerChoice();
+    
+    //Logic for displaying player choice
+    if (playerChoice === "rock") {
+      playerChoiceImg.src = "./assets/img/rock.png";
+    } else if (playerChoice === "paper") {
+      playerChoiceImg.src = "./assets/img/paper.png";
+    } else {
+      playerChoiceImg.src = "./assets/img/rock.png";
+    }
+
+    //Logic for displaying Computer choice
+    if (computerChoice === "rock") {
+      computerChoiceImg.src = "./assets/img/rock.png";
+    } else if (computerChoice === "paper") {
+      computerChoiceImg.src = "./assets/img/paper.png";
+    } else {
+      computerChoiceImg.src = "./assets/img/rock.png";
+    }
+
+
+  }))
+}
+
+playGame();
 
 function getComputerChoice() {
   let randomValue;
-  randomValue = Math.floor(Math.random() * 3) + 1; // Generates a random integer between 1 and 3
+  // Generates a random integer between 1 and 3
+  randomValue = Math.floor(Math.random() * 3) + 1;
 
   if (randomValue == 1) {
     return "rock";
@@ -15,6 +59,7 @@ function getComputerChoice() {
   }
 }
 
+// Function to determine the result of a single round between player and computer
 function singleRound(playerSelect, computerSelection) {
   let result = "";
 
@@ -36,52 +81,3 @@ function singleRound(playerSelect, computerSelection) {
 
   return result;
 }
-
-function game() {
-  let score = 0;
-  let report = "";
-  let round = 5;
-
-  for (let i = 1; i <= round; i++) {
-    let computerSelection = getComputerChoice();
-
-    let playerChoice = "";
-
-    playerSelectionChoices.forEach((choice) => {
-      choice.addEventListener("click", () => {
-        playerChoice = choice.id;
-        
-        singleRound(playerChoice, computerSelection);
-    
-        let results = singleRound(playerChoice, computerSelection());
-    
-        displayResults.textContent = results;
-    
-        if (result === "It's a Draw! Play Again") {
-          score = score;
-        } else if (
-          result === "You Win! Rock beats Scissors" ||
-          result === "You Win! Paper beats Rock" ||
-          result === "You Win! Scissors beats Paper"
-        ) {
-          score++;
-        } else {
-          score--;
-        }
-      });
-    });
-
-  }
-
-  if (score === 0) {
-    report = "It's a Draw!";
-  } else if (score > 0) {
-    report = "You Won!";
-  } else {
-    report = "You Lost!";
-  }
-
-  return report;
-}
-
-
