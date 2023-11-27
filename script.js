@@ -54,17 +54,15 @@ function playGame() {
 
       //Updates both the player and the computer score element
       let playerScoreElement = document.getElementById("player-score"),
-      computerScoreElement = document.getElementById("computer-score");
+        computerScoreElement = document.getElementById("computer-score");
 
-      if(updatedScores.playerScore == 1) {
+      if (updatedScores.playerScore == 1) {
         updatedPlayerScore += 1;
         playerScoreElement.textContent = `Player: ${updatedPlayerScore}`;
-      } 
-
-      else if (updatedScores.computerScore == 1) {
+      } else if (updatedScores.computerScore == 1) {
         updatedComputerScore += 1;
         computerScoreElement.textContent = `Player: ${updatedComputerScore}`;
-      } 
+      }
 
       roundFive();
     })
@@ -86,7 +84,7 @@ function updateScores(results, playerScore, computerScore) {
     computerScore++;
   }
 
-  return {computerScore, playerScore};
+  return { computerScore, playerScore };
 }
 
 // function to update the number of Rounds to the user
@@ -143,7 +141,19 @@ function singleRound(playerSelect, computerSelection) {
 
 function roundFive() {
   if (updatedPlayerScore == 5 || updatedComputerScore == 5) {
-    
+    let modal = document.querySelector(".won-info"),
+      modalImg = document.getElementById("won_img"),
+      modalText = document.querySelector(".won-text"),
+      showModal = document.querySelector(".show-modal");
+
+    modal.classList.add("show-modal");
+
+    // Close modal when clicking outside of it
+    window.addEventListener("click", function (event) {
+      if (event.target === modal) {
+        modal.classList.remove("show-modal");
+      }
+    });
   }
 }
 

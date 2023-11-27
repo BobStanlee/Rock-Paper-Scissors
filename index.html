@@ -19,71 +19,69 @@
       </nav>
 
       <main>
-        <div class="rounds">
-            Round: ----
-        </div>
+        <div class="rounds">Round: ----</div>
 
         <div class="gameinfo">
-            <div class="display-results">
-                Choose Your Weapon
-            </div>
+          <div class="display-results">Choose Your Weapon</div>
 
-            <div class="scores">
-                <div class="player-scores">
-                    <img src="" alt="Player Choice" class="player-choice_img">
-                    <div class="player-info info">
-                      <img src="./assets/img/player.png" alt="player-icon info">
-                      <span id="player-score">Player: 0</span>
-                    </div>
-                </div>
-                <div class="computer-scores">
-                  <img src="" alt="Computer Choice" class="computer-choice_img">
-                  <div class="computer-info info">
-                    <img src="./assets/img/computer.png" alt="player-icon">
-                    <span id="computer-score">Computer: 0</span>
-                  </div>
-                </div>
+          <div class="scores">
+            <div class="player-scores">
+              <img src="" alt="Player Choice" class="player-choice_img" />
+              <div class="player-info info">
+                <img src="./assets/img/player.png" alt="player-icon info" />
+                <span id="player-score">Player: 0</span>
+              </div>
             </div>
+            <div class="computer-scores">
+              <img src="" alt="Computer Choice" class="computer-choice_img" />
+              <div class="computer-info info">
+                <img src="./assets/img/computer.png" alt="player-icon" />
+                <span id="computer-score">Computer: 0</span>
+              </div>
+            </div>
+          </div>
         </div>
 
         <div class="playerselection">
-            <div class="playerchoice" id="rock">
-                <img src="./assets/img/rock.png" alt="rock">
-                <h2 class="choice-name">
-                    rock
-                </h2>
-            </div>
+          <div class="playerchoice" id="rock">
+            <img src="./assets/img/rock.png" alt="rock" />
+            <h2 class="choice-name">rock</h2>
+          </div>
 
-            <div class="playerchoice" id="paper">
-                <img src="./assets/img/paper.png" alt="rock">
-                <h2 class="choice-name">
-                    paper
-                </h2>
-            </div>
+          <div class="playerchoice" id="paper">
+            <img src="./assets/img/paper.png" alt="rock" />
+            <h2 class="choice-name">paper</h2>
+          </div>
 
-            <div class="playerchoice" id="scissors">
-                <img src="./assets/img/scissors.png" alt="rock">
-                <h2 class="choice-name">
-                    scissors
-                </h2>
-            </div>
+          <div class="playerchoice" id="scissors">
+            <img src="./assets/img/scissors.png" alt="rock" />
+            <h2 class="choice-name">scissors</h2>
+          </div>
         </div>
       </main>
 
       <footer>
-        <p>Copyright &copy; 2023</p> 
-        
-        <a href="https://github.com/BobStanlee/Rock-Paper-Scissors/tree/main" target="_blank"><img src="./assets/img/github.png" alt=""></a>
+        <p>Copyright &copy; 2023</p>
+
+        <a
+          href="https://github.com/BobStanlee/Rock-Paper-Scissors/tree/main"
+          target="_blank"
+          ><img src="./assets/img/github.png" alt=""
+        /></a>
       </footer>
     </div>
 
     <div class="won-info">
-      <div class="won-img">
-        <img src="./assets/img/paper.png" alt="">
-      </div>
+      <div class="won-info_container">
+        <div class="close-btn">
+          X
+        </div>
 
-      <div class="won-text">
-        You Lose! Play Again.
+        <div class="won-img">
+          <img src="./assets/img/paper.png" alt="" id="won_img" />
+        </div>
+
+        <div class="won-text">You Lose! Play Again.</div>
       </div>
     </div>
     <script src="script.js"></script>
