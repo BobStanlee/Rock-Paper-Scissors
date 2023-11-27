@@ -52,7 +52,7 @@ function playGame() {
       //Update both player and computer scores
       let updatedScores = updateScores(results, playerScore, computerScore);
 
-      //Updates the player-score element
+      //Updates both the player and the computer score element
       let playerScoreElement = document.getElementById("player-score"),
       computerScoreElement = document.getElementById("computer-score");
 
@@ -65,6 +65,8 @@ function playGame() {
         updatedComputerScore += 1;
         computerScoreElement.textContent = `Player: ${updatedComputerScore}`;
       } 
+
+      roundFive();
     })
   );
 }
@@ -137,6 +139,12 @@ function singleRound(playerSelect, computerSelection) {
   }
 
   return result;
+}
+
+function roundFive() {
+  if (updatedPlayerScore == 5 || updatedComputerScore == 5) {
+    
+  }
 }
 
 playGame();
