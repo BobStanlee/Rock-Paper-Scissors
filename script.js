@@ -157,7 +157,9 @@ function roundFive() {
     });
 
     // Close modal when clicking on the close button
-
+    modalButton.addEventListener('click', () => {
+      modal.classList.remove("show-modal");
+    })
   }
 }
 
