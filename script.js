@@ -160,6 +160,27 @@ function roundFive() {
     modalButton.addEventListener('click', () => {
       modal.classList.remove("show-modal");
     })
+
+    // Determine Who won
+    determineWinner(updatedPlayerScore, updatedComputerScore, modalText);
+
+    // Reset updatedScores
+    updatedPlayerScore = 0;
+    updatedComputerScore = 0;
+  }
+}
+
+function determineWinner(pScore, cScore, modalText) {
+  if (pScore == cScore) {
+    modalText.textContent = "It's a Draw";
+  } 
+
+  else if (pScore == 5 || cScore < 5) {
+    modalText.textContent = "You Won! Congrats!";
+  }
+
+  else if (cScore == 5 || pScore < 5) {
+    modalText.textContent = "You Lost! Computer Beats You!";
   }
 }
 
