@@ -6,6 +6,7 @@
 
 body {
     font-family: 'Poppins', sans-serif;
+    position: relative;
 }
 
 .container {
@@ -147,9 +148,28 @@ footer p {
 }
 
 .won-info {
+    position: absolute;
+    top: 0;
+    left: 0;
     display: flex;
+    flex-direction: column;
+    row-gap: 40px;
     align-items: center;
     justify-content: center;
+    width: 100%;
     height: 100vh;
     background: rgba(103, 103, 103, 0.2);
+    color: #000000;
+}
+
+.won-img img{
+    width: 200px;
+    height: auto;
+}
+
+.won-text {
+    font-size: 36px;
+    font-weight: 600;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #EE340E;
 }
