@@ -10,6 +10,9 @@ let playerChoiceImg = document.querySelector(".player-choice_img");
 // Selects the element with the class "computer-choice_img"
 let computerChoiceImg = document.querySelector(".computer-choice_img");
 
+let playerScoreElement = document.getElementById("player-score"),
+  computerScoreElement = document.getElementById("computer-score");
+
 let computerScore = 0;
 let playerScore = 0;
 let updatedPlayerScore = 0;
@@ -53,8 +56,6 @@ function playGame() {
       let updatedScores = updateScores(results, playerScore, computerScore);
 
       //Updates both the player and the computer score element
-      let playerScoreElement = document.getElementById("player-score"),
-        computerScoreElement = document.getElementById("computer-score");
 
       if (updatedScores.playerScore == 1) {
         updatedPlayerScore += 1;
@@ -64,7 +65,9 @@ function playGame() {
         computerScoreElement.textContent = `Player: ${updatedComputerScore}`;
       }
 
-      roundFive();
+      if (updatedPlayerScore == 5 || updatedComputerScore == 5) {
+        console.log('lock');
+      }
     })
   );
 }
@@ -157,9 +160,9 @@ function roundFive() {
     });
 
     // Close modal when clicking on the close button
-    modalButton.addEventListener('click', () => {
+    modalButton.addEventListener("click", () => {
       modal.classList.remove("show-modal");
-    })
+    });
 
     // Determine Who won
     determineWinner(updatedPlayerScore, updatedComputerScore, modalText);
@@ -167,21 +170,32 @@ function roundFive() {
     // Reset updatedScores
     updatedPlayerScore = 0;
     updatedComputerScore = 0;
+
+    playerScoreElement.textContent = `Player: ${updatedPlayerScore}`;
+    computerScoreElement.textContent = `Computer: ${updatedComputerScore}`;
+
+    //
   }
 }
 
 function determineWinner(pScore, cScore, modalText) {
   if (pScore == cScore) {
     modalText.textContent = "It's a Draw";
-  } 
-
-  else if (pScore == 5 || cScore < 5) {
+  } else if (pScore == 5 || cScore < 5) {
     modalText.textContent = "You Won! Congrats!";
-  }
-
-  else if (cScore == 5 || pScore < 5) {
+  } else if (cScore == 5 || pScore < 5) {
     modalText.textContent = "You Lost! Computer Beats You!";
   }
+}
+
+function disableClick() {
+  playerSelectionChoices.forEach((choice) => {
+    choice.disable = true; // Disable the player selection
+
+    setTimeout(() => {
+      choice.disabled = false; // Enable the player selection after a delay
+    }, 3000); // 3 seconds
+  });
 }
 
 playGame();
