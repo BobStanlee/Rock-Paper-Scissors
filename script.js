@@ -144,7 +144,8 @@ function roundFive() {
     let modal = document.querySelector(".won-info"),
       modalImg = document.getElementById("won_img"),
       modalText = document.querySelector(".won-text"),
-      showModal = document.querySelector(".show-modal");
+      showModal = document.querySelector(".show-modal"),
+      modalButton = document.querySelector(".close-btn");
 
     modal.classList.add("show-modal");
 
@@ -154,6 +155,9 @@ function roundFive() {
         modal.classList.remove("show-modal");
       }
     });
+
+    // Close modal when clicking on the close button
+
   }
 }
 
