@@ -72,8 +72,7 @@ function playGame() {
 
       // Checks if either player or computer has reached the winning score
       if (updatedPlayerScore == 5 || updatedComputerScore == 5) {
-        console.log('lock');
-
+        disableClick();
       }
     })
   );
@@ -201,14 +200,16 @@ function determineWinner(pScore, cScore, modalText) {
 
 // Function to disable click after player selection for a certain duration
 function disableClick() {
-  // Disables player selection for a specified time
-  playerSelectionChoices.forEach((choice) => {
-    choice.disable = true; // Disable the player selection
+
+  // Select the player selection container
+  let playerSelectionContainer = document.querySelector(".playerselection");
+
+  // Disable the player selection
+  playerSelectionContainer.setAttribute("style", "pointer-events: none;");
 
     setTimeout(() => {
-      choice.disabled = false; // Enable the player selection after a delay
+      playerSelectionContainer.setAttribute("style", "pointer-events: all;"); // Enable the player selection after a delay
     }, 3000); // 3 seconds
-  });
 }
 
 playGame();
