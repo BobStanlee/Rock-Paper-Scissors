@@ -155,7 +155,6 @@ function roundFive() {
     let modal = document.querySelector(".won-info"),
       modalImg = document.getElementById("won_img"),
       modalText = document.querySelector(".won-text"),
-      showModal = document.querySelector(".show-modal"),
       modalButton = document.querySelector(".close-btn");
 
     modal.classList.add("show-modal");
@@ -173,28 +172,38 @@ function roundFive() {
     });
 
     // Determine Who won
-    determineWinner(updatedPlayerScore, updatedComputerScore, modalText);
+    determineWinner(updatedPlayerScore, updatedComputerScore, modalText, modalImg);
 
     // Resets scores for a new game
     updatedPlayerScore = 0;
     updatedComputerScore = 0;
 
+    // Update the scores for a new game
     playerScoreElement.textContent = `Player: ${updatedPlayerScore}`;
     computerScoreElement.textContent = `Computer: ${updatedComputerScore}`;
 
-    //
+    // Reset images
+    playerChoiceImg.src = "./assets/img/player1.png";
+    computerChoiceImg.src = "./assets/img/computer1.png";
   }
 }
 
-// Function to determine the winner and update modal text
-function determineWinner(pScore, cScore, modalText) {
+// Function to determine the winner and update modal text, modal img
+function determineWinner(pScore, cScore, modalText, modalImg) {
   // Determines the winner and updates modal text
   if (pScore == cScore) {
     modalText.textContent = "It's a Draw";
-  } else if (pScore == 5 || cScore < 5) {
+    modalImg.src = "./assets/img/Draw.png";
+  } 
+  
+  else if (pScore == 5 || cScore < 5) {
     modalText.textContent = "You Won! Congrats!";
-  } else if (cScore == 5 || pScore < 5) {
+    modalImg.src = "./assets/img/Won.png";
+  } 
+  
+  else if (cScore == 5 || pScore < 5) {
     modalText.textContent = "You Lost! Computer Beats You!";
+    modalImg.src = "./assets/img/Lose.png";
   }
 }
 
@@ -209,6 +218,9 @@ function disableClick() {
 
     setTimeout(() => {
       playerSelectionContainer.setAttribute("style", "pointer-events: all;"); // Enable the player selection after a delay
+
+      // Call roundFive() functionality;
+      roundFive();
     }, 3000); // 3 seconds
 }
 
