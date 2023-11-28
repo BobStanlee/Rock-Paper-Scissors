@@ -10,19 +10,23 @@ let playerChoiceImg = document.querySelector(".player-choice_img");
 // Selects the element with the class "computer-choice_img"
 let computerChoiceImg = document.querySelector(".computer-choice_img");
 
+// Selects elements by their unique IDs to store the player and computer scores
 let playerScoreElement = document.getElementById("player-score"),
   computerScoreElement = document.getElementById("computer-score");
 
+// Initializing scores and updated scores for player and computer
 let computerScore = 0;
 let playerScore = 0;
 let updatedPlayerScore = 0;
 let updatedComputerScore = 0;
 
+// Function to start the game and handle player choices
 function playGame() {
   let playerChoice = "";
   let computerChoice = "";
   let results = "";
 
+  // Adds click event listeners to each player choice
   playerSelectionChoices.forEach((choice) =>
     choice.addEventListener("click", () => {
       playerChoice = choice.id;
@@ -47,6 +51,7 @@ function playGame() {
         computerChoiceImg.src = "./assets/img/scissors.png";
       }
 
+      // Determines the result of the round
       results = singleRound(playerChoice, computerChoice);
 
       //call display results to screen function
@@ -65,8 +70,10 @@ function playGame() {
         computerScoreElement.textContent = `Player: ${updatedComputerScore}`;
       }
 
+      // Checks if either player or computer has reached the winning score
       if (updatedPlayerScore == 5 || updatedComputerScore == 5) {
         console.log('lock');
+
       }
     })
   );
@@ -74,6 +81,7 @@ function playGame() {
 
 // Function updates both player and computer scores
 function updateScores(results, playerScore, computerScore) {
+  // Logic to update scores based on the result
   if (
     results === "You Win! Scissors beats Paper" ||
     results === "You Win! Paper beats Rock" ||
@@ -142,6 +150,7 @@ function singleRound(playerSelect, computerSelection) {
   return result;
 }
 
+// Function to handle end game when one player reaches 5 points
 function roundFive() {
   if (updatedPlayerScore == 5 || updatedComputerScore == 5) {
     let modal = document.querySelector(".won-info"),
@@ -167,7 +176,7 @@ function roundFive() {
     // Determine Who won
     determineWinner(updatedPlayerScore, updatedComputerScore, modalText);
 
-    // Reset updatedScores
+    // Resets scores for a new game
     updatedPlayerScore = 0;
     updatedComputerScore = 0;
 
@@ -178,7 +187,9 @@ function roundFive() {
   }
 }
 
+// Function to determine the winner and update modal text
 function determineWinner(pScore, cScore, modalText) {
+  // Determines the winner and updates modal text
   if (pScore == cScore) {
     modalText.textContent = "It's a Draw";
   } else if (pScore == 5 || cScore < 5) {
@@ -188,7 +199,9 @@ function determineWinner(pScore, cScore, modalText) {
   }
 }
 
+// Function to disable click after player selection for a certain duration
 function disableClick() {
+  // Disables player selection for a specified time
   playerSelectionChoices.forEach((choice) => {
     choice.disable = true; // Disable the player selection
 
