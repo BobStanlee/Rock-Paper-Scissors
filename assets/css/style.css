@@ -36,14 +36,14 @@ main {
     padding: 20px;
 }
 
-.rounds {
+/* .rounds {
     font-size: 26px;
     font-weight: 400;
     color: #000000;
     border-bottom: 2px solid #EE340E;
     padding-bottom: 5px;
     margin-bottom: 20px;
-}
+} */
 
 .gameinfo {
     margin-bottom: 20px;

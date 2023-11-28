@@ -98,11 +98,11 @@ function updateScores(results, playerScore, computerScore) {
 }
 
 // function to update the number of Rounds to the user
-function updateRounds(loopnumber) {
-  let displayRound = document.querySelector(".rounds");
+// function updateRounds(loopnumber) {
+//   let displayRound = document.querySelector(".rounds");
 
-  displayRound.textContent = `Round: ${loopnumber} / 5`;
-}
+//   displayRound.textContent = `Round: ${loopnumber} / 5`;
+// }
 
 // Function to display result from single round game
 
