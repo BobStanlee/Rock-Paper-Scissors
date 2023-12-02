@@ -4,7 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Stagbont's Rock Paper Scissors</title>
-    <link rel="icon" href="./assets/img/favicon.png" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/img/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/img/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/img/favicon-16x16.png" />
+    <link rel="manifest" href="./assets/img/site.webmanifest" />
     <link rel="stylesheet" href="./assets/css/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -27,14 +30,22 @@
 
           <div class="scores">
             <div class="player-scores">
-              <img src="./assets/img/player1.png" alt="Player Choice" class="player-choice_img" />
+              <img
+                src="./assets/img/player1.png"
+                alt="Player Choice"
+                class="player-choice_img"
+              />
               <div class="player-info info">
                 <img src="./assets/img/player.png" alt="player-icon info" />
                 <span id="player-score">Player: 0</span>
               </div>
             </div>
             <div class="computer-scores">
-              <img src="./assets/img/computer1.png" alt="Computer Choice" class="computer-choice_img" />
+              <img
+                src="./assets/img/computer1.png"
+                alt="Computer Choice"
+                class="computer-choice_img"
+              />
               <div class="computer-info info">
                 <img src="./assets/img/computer.png" alt="player-icon" />
                 <span id="computer-score">Computer: 0</span>
@@ -74,17 +85,13 @@
 
     <div class="won-info">
       <div class="won-info_container">
-        <div class="close-btn">
-          X
-        </div>
+        <div class="close-btn">X</div>
 
         <div class="won-img">
           <img src="./assets/img/Draw.png" alt="" id="won_img" />
         </div>
 
-        <div class="won-text">
-          
-        </div>
+        <div class="won-text"></div>
       </div>
     </div>
     <script src="script.js"></script>
